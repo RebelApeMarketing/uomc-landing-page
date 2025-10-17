@@ -1,0 +1,114 @@
+---
+import { ViewTransitions } from "astro:transitions";
+
+const siteName = "Rebel Ape Marketing";
+const pageTitle = "Thanks — Your Checklist Is On The Way!";
+const pageDesc = "We’ve emailed your Ultimate Roofing Lead Generation Checklist. While you wait, grab the direct download or book a quick strategy call.";
+const calendly = "https://calendly.com/rebel-ape/30-minute-consultation";
+const phone = "+1 435-246-0401";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+
+    <!-- Canonical + CSS -->
+    <link rel="canonical" href="https://uomc.therebelape.com/thank-you" />
+    <link rel="stylesheet" href="/styles/site.css">
+
+    <!-- OG / Twitter (simple reuse) -->
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://RebelApeCDN.b-cdn.net/UOMC/featured-image.webp" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:url" content="https://uomc.therebelape.com/thank-you" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDesc} />
+    <meta name="twitter:image" content="https://RebelApeCDN.b-cdn.net/UOMC/featured-image.webp" />
+    <meta name="robots" content="noindex,follow" />
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://rebelapecdn.b-cdn.net" crossorigin>
+    <link rel="preconnect" href="https://iframe.mediadelivery.net" crossorigin>
+    <meta name="theme-color" content="#16a34a">
+
+    <!-- Typekit (same as home) -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/KIT_ID.css">
+    <style>
+      body, button, input, textarea { font-family: "proxima-nova", "aktiv-grotesk", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; }
+    </style>
+  </head>
+  <body>
+    <ViewTransitions />
+
+    <!-- HERO wrap with same background -->
+    <section class="hero-wrap" style="padding-block: clamp(2rem, 4vw, 3rem);">
+      <header class="container" style="display:flex; align-items:center; justify-content:center; padding-top:35px; padding-bottom:65px;">
+        <a href="/" aria-label="Back to homepage">
+          <img src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png" alt="Rebel Ape Marketing" width="350" height="100" style="max-width:100%; height:auto;" loading="eager" />
+        </a>
+      </header>
+
+      <div class="container" style="max-width:900px; text-align:center;">
+        <h1 class="text-white" style="font-weight:800; line-height:1.1; font-size:clamp(2.2rem, 6vw, 3.25rem); margin:0 0 .75rem;">
+          Thanks — Your Checklist Is On The Way!
+        </h1>
+        <p class="text-white" style="font-size:clamp(1.05rem, 2.5vw, 1.25rem); margin:0 0 1.25rem;">
+          Check your inbox for the email from <strong>Rebel Ape Marketing</strong>. If it doesn’t arrive in a couple of minutes, check your spam or promotions tab.
+        </p>
+
+        <div style="display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="https://RebelApeCDN.b-cdn.net/UOMC/68c313527c59697fb16bade7.pdf" target="_blank" rel="noopener" aria-label="Download the checklist PDF now">
+            Download The PDF Now
+          </a>
+          <a class="btn" href={calendly} target="_blank" rel="noopener" aria-label="Book a free strategy call">
+            Book A Quick Strategy Call
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick value section on white -->
+    <section style="background:#fff; padding:2.25rem 0;">
+      <div class="container" style="max-width:900px;">
+        <div class="grid grid-cols-2" style="align-items:start; column-gap:2rem;">
+          <div>
+            <h3 style="font-weight:800; margin:0 0 .5rem;">What To Do Next</h3>
+            <ul style="margin:.25rem 0 0 1rem; line-height:1.6;">
+              <li>Open the checklist and mark what’s complete vs. missing</li>
+              <li>Share it with your team so everyone’s aligned</li>
+              <li>Pick 1–2 fixes this week (e.g., proof, speed, or follow-up)</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-weight:800; margin:0 0 .5rem;">Need A Hand?</h3>
+            <p class="muted" style="margin:0 0 .75rem;">We’ll help you prioritize changes that move the needle fastest.</p>
+            <a class="btn btn-primary" href={calendly} target="_blank" rel="noopener">Schedule A Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="background:#111827; padding-block:1.75rem;">
+      <div class="container" style="color:#fff; font-size:.95rem;">
+        <div style="display:grid; grid-template-columns: auto 1fr; align-items:center; gap:1rem;">
+          <div><a href="/"><img src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png" alt="Rebel Ape Marketing" width="190" height="57" style="max-width:100%; height:auto;" loading="lazy" /></a></div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; text-align:right; gap:.35rem;">
+            <div style="display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;">
+              <strong style="color:#fff;">Call Today!</strong>
+              <a href={"tel:" + phone} style="color:#fff; text-decoration:none; font-weight:600;">{phone}</a>
+            </div>
+            <span>© 2025 | Rebel Ape Marketing | All Rights Reserved.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

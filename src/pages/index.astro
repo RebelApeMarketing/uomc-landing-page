@@ -17,6 +17,8 @@ const phone = "+1 435-246-0401";
 
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
+    <link rel="canonical" href="https://uomc.therebelape.com/" />
+    <link rel="stylesheet" href="/styles/site.css" />
 
     <!-- OG / Twitter -->
     <meta property="og:title" content={pageTitle} />
@@ -28,42 +30,12 @@ const phone = "+1 435-246-0401";
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDesc} />
     <meta name="twitter:image" content="https://RebelApeCDN.b-cdn.net/UOMC/featured-image.webp" />
+    <meta property="og:url" content="https://uomc.therebelape.com/" />
+    <meta name="robots" content="index,follow" />
+    <link rel="preconnect" href="https://rebelapecdn.b-cdn.net" crossorigin>
+    <link rel="preconnect" href="https://iframe.mediadelivery.net" crossorigin>
+    <meta name="theme-color" content="#16a34a">
 
-    <!-- Simple, framework-free styles so you can ship fast -->
-    <style>
-      :root { --ring: rgba(0,0,0,.06); --text:#111827; --muted:#6b7280; --border:#e5e7eb; --brand:#16a34a; --accent:#facc15; }
-      * { box-sizing: border-box; }
-      body { margin:0; color:var(--text); background:#fff; }
-      html { scroll-behavior: smooth; }
-      .container { max-width: 1200px; margin-inline: auto; padding-inline: 1.25rem; }
-      .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.9rem 1.2rem; border-radius:1rem; border:1px solid var(--border); text-decoration:none; }
-      .btn-primary { background: var(--accent); color:#111827; border-color:var(--accent); }
-      .card { border:1px solid var(--border); border-radius:1.25rem; box-shadow:0 1px 2px var(--ring); background:white; }
-      .grid { display:grid; gap:1.25rem; }
-      @media (min-width: 768px) {
-        .grid-cols-2 { grid-template-columns: 1fr 1fr; }
-        .grid-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
-      }
-      .hero {
-        background: url("https://RebelApeCDN.b-cdn.net/UOMC/background-gorilla.webp") center/cover no-repeat;
-      }
-      .ratio { position:relative; width:100%; }
-      .ratio > iframe, .ratio > img { position:absolute; inset:0; width:100%; height:100%; border:0; border-radius: .85rem; }
-      .r-16x9 { padding-top: 56.25%; } /* 16:9 */
-      .muted { color: var(--muted); }
-
-      .hero-wrap { background: url("https://RebelApeCDN.b-cdn.net/UOMC/background-gorilla.webp") center/cover no-repeat; }
-      .brand-section { background: var(--brand); }
-      .brand-section .headline { color: #fff; text-align: center; font-weight: 800; font-size: clamp(1.4rem, 3.2vw, 2rem); margin: 1.5rem 0 1.5rem; }
-      .text-white { color:#fff; }
-      .bullets { list-style: none; padding-left: 0; margin: 0 0 1.1rem 0; }
-      .bullets li { display:flex; align-items:flex-start; gap:.6rem; line-height:1.6; margin:.35rem 0; color:#fff; }
-      .bullets .check { display:inline-flex; align-items:center; justify-content:center; width:1.15rem; height:1.15rem; border-radius:999px; background:#22c55e; color:#0a0a0a; font-weight:700; font-size:.85rem; flex:0 0 auto; }
-      .hero-wrap .bullets, .hero-wrap .bullets li { text-align: left !important; }
-      .hero-wrap .bullets li { display:flex; align-items:flex-start; justify-content:flex-start; }
-      .btn-primary:hover { background: var(--brand); border-color: var(--brand); color: #fff; }
-      .glow { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 10px 24px rgba(0,0,0,.18); }
-    </style>
 
     <!-- Structured data for the downloadable PDF -->
     <script type="application/ld+json">
@@ -76,6 +48,24 @@ const phone = "+1 435-246-0401";
       "url":"/images/ultimate-online-marketing-checklist-for-roofers.pdf",
       "publisher":{"@type":"Organization","name":"Rebel Ape Marketing"},
       "image":"https://RebelApeCDN.b-cdn.net/UOMC/featured-image.webp"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Rebel Ape Marketing",
+      "url": "https://therebelape.com",
+      "logo": "https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Ultimate Roofing Lead Generation Checklist",
+      "url": "https://uomc.therebelape.com/"
     }
     </script>
 
@@ -121,7 +111,7 @@ const phone = "+1 435-246-0401";
             <li><span class="check">✓</span> Get steady leads even when storms slow down</li>
             <li><span class="check">✓</span> Turn Google searches into real conversations with optimized listings</li>
             <li><span class="check">✓</span> Automate follow‑ups so you never lose another lead</li>
-            <li><span class="check">✓</span> Build authority that makes homeowners choose <em>you</em> over competitors</li>
+            <li><span class="check">✓</span> Build authority that makes homeowners choose over competitors</li>
           </ul>
 
           <a class="btn btn-primary" href="#form" style="margin-top:.75rem; padding:1.1rem 1.5rem; font-size:1.1rem; font-weight:700; border-radius:.5rem;">YES, SEND ME THE FREE CHECKLIST</a>
@@ -136,7 +126,7 @@ const phone = "+1 435-246-0401";
     </section>
 
     <!-- SOCIAL PROOF SECTION -->
-    <section style="background:#fff; padding-top:3rem; padding-bottom:6rem;">
+    <section style="background:#fff; padding-top:3rem; padding-bottom:6rem; background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.065) 1px, transparent 1px); background-size: 12px 12px;">
       <div class="container" style="text-align:center; max-width:900px; width:100%; margin-inline:auto;">
         <h2 style="font-weight:800; font-size:clamp(1.8rem,4vw,2.5rem); margin-bottom:.5rem; color:#111827;">
           Trusted By Companies Using The Silverback Authority&nbsp;Method
@@ -144,7 +134,7 @@ const phone = "+1 435-246-0401";
         <p style="font-size:clamp(1rem,2vw,1.25rem); color:#374151; margin-bottom:2rem;">
           These businesses use this system to attract more leads, build authority, and dominate their local market.
         </p>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:2rem; row-gap:2.5rem;">
+        <div class="logo-grid">
           <img src="https://RebelApeCDN.b-cdn.net/UOMC/cti-roofing-logo.webp" alt="CTI Roofing Logo" style="max-height:60px; width:auto;" loading="lazy" />
           <img src="https://RebelApeCDN.b-cdn.net/UOMC/highland-surveying-logo.png" alt="Highland Surveying Logo" style="max-height:60px; max-width:170px; width:auto; opacity:.85;" loading="lazy" />
           <img src="https://RebelApeCDN.b-cdn.net/UOMC/ifix-appliance-repair-logo.png" alt="iFix Appliance Repair Logo" style="max-height:60px; width:auto;" loading="lazy" />
@@ -168,7 +158,7 @@ const phone = "+1 435-246-0401";
     </section>
 
     <!-- VIDEOS (video on top, copy below) -->
-    <section class="brand-section" style="padding-top: 2.5rem; padding-bottom: 4rem; background: var(--brand); background-image: url('https://RebelApeCDN.b-cdn.net/UOMC/house-background.webp'), linear-gradient(180deg, var(--brand) 0%, #128a3f 100%); background-repeat: no-repeat, no-repeat; background-position: top, top; background-size: contain, 100% 100%;">
+    <section class="brand-section" style="padding-top: 2.5rem; padding-bottom: 50px; background: var(--brand); background-image: url('https://RebelApeCDN.b-cdn.net/UOMC/house-background.webp'), linear-gradient(180deg, var(--brand) 0%, #128a3f 100%); background-repeat: no-repeat, no-repeat; background-position: top, top; background-size: contain, 100% 100%;">
       <div class="container" style="max-width:800px; width:100%; margin-inline:auto;">
         <h2 class="headline" style="font-size:clamp(2rem, 4.5vw, 3rem); margin-bottom:.5rem;">
           Google Reports 46% Of Searches Have Local Intent.
@@ -181,7 +171,7 @@ const phone = "+1 435-246-0401";
           as reported by BrightLocal and <span style="white-space:nowrap;">Search Engine Roundtable</span>.
         </p>
       </div>
-      <div class="container" style="margin-bottom:80px;">
+      <div class="container" style="margin-bottom:0;">
         <div class="grid grid-cols-2 grid-rows-2">
           <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
             <div class="ratio r-16x9">
@@ -225,7 +215,7 @@ const phone = "+1 435-246-0401";
             <p class="muted" style="margin:0;">Win the map pack with a complete profile and real reviews.</p>
           </article>
 
-          <article class="card glow" style="padding:1rem; border:none; border-radius:5px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#fff;">
+          <article class="card glow more-videos-card" style="padding:1rem 0 2rem 0; border:none; border-radius:5px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#fff;">
             <h3 style="margin:.75rem 0 .25rem; font-weight:700; color:#111827;">More Videos Coming Soon</h3>
             <p class="muted" style="margin:0;">We’re producing the next series now to cover even more ways to grow your roofing business.</p>
           </article>
@@ -235,7 +225,7 @@ const phone = "+1 435-246-0401";
       </section>
 
       <!-- TRANSITION HEADLINE SECTION (white) -->
-      <section style="background:#fff; padding:2.5rem 0;">
+      <section style="background:#fff; padding:3.125rem 0 1.5625rem; background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.065) 1px, transparent 1px); background-size: 12px 12px;">
         <div class="container" style="text-align:center;">
           <h2 style="font-weight:800; font-size:clamp(1.8rem,4vw,2.5rem); color:#111827; margin:0 0 .5rem;">
             It’s Time To Get Your Marketing Right
@@ -284,33 +274,34 @@ const phone = "+1 435-246-0401";
               </ul>
             </div>
 
-            <!-- Right column: Headline smaller + black + simplified form -->
+            <!-- Right column: Headline smaller + black + simplified form in action card -->
             <div>
-              <h2 style="color:#111827; text-align:center; font-weight:800; font-size:clamp(1.5rem, 3.2vw, 2.2rem); margin:0 0 .5rem;">
-                Download Your Checklist Here
-              </h2>
-              <p style="color:#111827; text-align:center; font-size:clamp(1rem, 2vw, 1.15rem); margin:0 0 16px;">
-                Simply fill out the form, and we’ll email it to you.
-              </p>
+              <div style="background:#f1f5f9; border:1px solid #e5e7eb; border-radius:8px; padding:20px;">
+                <h2 style="color:#111827; text-align:center; font-weight:800; font-size:clamp(1.5rem, 3.2vw, 2.2rem); margin:0 0 .5rem;">
+                  Download Your Checklist Here
+                </h2>
+                <p style="color:#111827; text-align:center; font-size:clamp(1rem, 2vw, 1.15rem); margin:0 0 16px;">
+                  Simply fill out the form, and we’ll email it to you.
+                </p>
 
-              <!-- Removed outer glow and extra padding -->
-              <div style="max-width:650px; margin:0 auto; padding:0;">
-                <iframe
-                  src="https://link.therebelape.com/widget/form/RbWFyQ3lqf6TzO98SV1y"
-                  style="width:100%; height:610px; border:none; border-radius:12px;"
-                  id="inline-RbWFyQ3lqf6TzO98SV1y"
-                  data-layout="{'id':'INLINE'}"
-                  data-trigger-type="alwaysShow"
-                  data-activation-type="alwaysActivated"
-                  data-deactivation-type="neverDeactivate"
-                  data-form-name="Ultimate Online Marketing Checklist"
-                  data-height="607"
-                  data-layout-iframe-id="inline-RbWFyQ3lqf6TzO98SV1y"
-                  data-form-id="RbWFyQ3lqf6TzO98SV1y"
-                  title="Ultimate Online Marketing Checklist"
-                  loading="lazy"
-                ></iframe>
-                <script src="https://link.therebelape.com/js/form_embed.js"></script>
+                <div style="max-width:650px; margin:0 auto; padding:0;">
+                  <iframe
+                    src="https://link.therebelape.com/widget/form/RbWFyQ3lqf6TzO98SV1y"
+                    style="width:100%; height:610px; border:none; border-radius:12px;"
+                    id="inline-RbWFyQ3lqf6TzO98SV1y"
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-activation-type="alwaysActivated"
+                    data-deactivation-type="neverDeactivate"
+                    data-form-name="Ultimate Online Marketing Checklist"
+                    data-height="607"
+                    data-layout-iframe-id="inline-RbWFyQ3lqf6TzO98SV1y"
+                    data-form-id="RbWFyQ3lqf6TzO98SV1y"
+                    title="Ultimate Online Marketing Checklist"
+                    loading="lazy"
+                  ></iframe>
+                  <script src="https://link.therebelape.com/js/form_embed.js"></script>
+                </div>
               </div>
             </div>
           </div>

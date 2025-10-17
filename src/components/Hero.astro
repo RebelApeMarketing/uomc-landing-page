@@ -1,0 +1,48 @@
+---
+const { phone = "+1 435-246-0401" } = Astro.props
+---
+<!-- HERO WRAP (shared background for logo + hero content) -->
+<section class="hero-wrap" style="padding-block: clamp(2rem, 4vw, 3rem);">
+    <header class="container" style="display:flex; align-items:center; justify-content:center; padding-top:35px; padding-bottom:65px;">
+    <img src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png" alt="Rebel Ape Marketing" width="350" height="100" style="max-width:100%; height:auto;" loading="eager" />
+    </header>
+    <div class="container" style="max-width:950px; width:100%; text-align:center;">
+    <h1 style="font-weight:800; line-height:1.1; font-size: clamp(3rem, 7vw, 5rem); margin:0 0 55px;" class="text-white">
+        <span class="text-white">Get</span> <span style="background:linear-gradient(90deg,#22c55e,#16a34a); -webkit-background-clip:text; color:transparent;">More Jobs</span> <span class="text-white">With This</span> <span style="background:linear-gradient(90deg,#22c55e,#16a34a); -webkit-background-clip:text; color:transparent;">Marketing Roadmap</span>
+    </h1>
+    </div>
+    <div class="container grid grid-cols-2" style="align-items:center; column-gap:2.25rem; row-gap:1rem;">
+    <!-- Left column: title, subhead, bullets, CTA button + subtext -->
+    <div>
+        <h2 class="text-white" style="font-weight:700; line-height:1.1; font-size:clamp(1.8rem, 4vw, 2.8rem); margin:0 0 .75rem;">
+        The <span style="background:linear-gradient(90deg,#22c55e,#16a34a); -webkit-background-clip:text; color:transparent;">Ultimate Online Marketing</span> <span class="text-white">Checklist</span>
+        </h2>
+        <p class="text-white" style="font-weight:700; font-size:1.2rem; margin: 0 0 .5rem; line-height:1.5;">
+        This system makes your marketing work — finally bringing your ads, SEO, and website together to generate consistent leads.
+        </p>
+        <p class="text-white" style="font-weight:400; font-size:1.1rem; max-width: 60ch; margin: .35rem 0 1rem; line-height:1.5;">
+        Most roofers don’t need more traffic — they need better marketing flow.
+        This roadmap reveals the exact steps to fix what’s broken in your funnel, show up for high‑intent searches, and turn browsers into booked jobs.
+        You’ll see how to capture more leads, follow up automatically, and build the authority that keeps your pipeline full — even during the slow season.
+        </p>
+
+        <!-- Bullet List Hero -->
+        <ul class="bullets">
+        <li><span class="check">✓</span> Fix conversion leaks on your landing pages</li>
+        <li><span class="check">✓</span> Show up for “roof repair” &amp; “roof replacement” nearby</li>
+        <li><span class="check">✓</span> Get steady leads even when storms slow down</li>
+        <li><span class="check">✓</span> Turn Google searches into real conversations</strong> with optimized listings</li>
+        <li><span class="check">✓</span> Automate follow‑ups so you never lose another lead</li>
+        <li><span class="check">✓</span> Build authority that makes homeowners choose you over competitors</li>
+        </ul>
+
+        <a class="btn btn-primary" href="#form" style="margin-top:.75rem; padding:1.1rem 1.5rem; font-size:1.1rem; font-weight:700; border-radius:.5rem;">YES, SEND ME THE FREE CHECKLIST</a>
+        
+    </div>
+
+    <!-- Right column: booklet image without background -->
+    <div style="display:flex; justify-content:center; align-items:center;">
+        <img src="https://RebelApeCDN.b-cdn.net/UOMC/uomc-book.webp?width=1200&format=webp" alt="Ultimate Roofing Lead Generation Checklist booklet" width="1200" height="1600" style="max-width:100%; height:auto; border-radius:.85rem; aspect-ratio: 3 / 4;" loading="eager" fetchpriority="high" decoding="async" />
+    </div>
+    </div>
+</section>

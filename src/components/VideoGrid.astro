@@ -1,0 +1,128 @@
+<section class="brand-section" style="padding-top: 2.5rem; padding-bottom: 50px; background: var(--brand); background-image: url('https://RebelApeCDN.b-cdn.net/UOMC/house-background.webp'), linear-gradient(180deg, var(--brand) 0%, #128a3f 100%); background-repeat: no-repeat, no-repeat; background-position: top, top; background-size: contain, 100% 100%;">
+  <div class="container" style="max-width:800px; width:100%; margin-inline:auto;">
+    <h2 class="headline" style="font-size:clamp(2rem, 4.5vw, 3rem); margin-bottom:.5rem;">
+      Google Reports 46% Of Searches Have Local Intent.
+    </h2>
+    <p style="font-size:clamp(1.1rem, 2vw, 1.5rem); font-style:italic; color:#fff; text-align:center; margin-top:0; margin-bottom:80px;">
+      This Checklist Ensures Your Business Shows Up.
+    </p>
+    <p class="source-note" style="font-size:0.8rem; color:#d1d5db; text-align:center; margin-top:-60px; margin-bottom:55px;">
+      Source: Google presentation at the <em>Secrets of Local Search</em> event (2018),<br/>
+      as reported by BrightLocal and <span style="white-space:nowrap;">Search Engine Roundtable</span>.
+    </p>
+  </div>
+  <div class="container" style="margin-bottom:0;">
+    <!-- Website Optimization Video -->
+    <div class="grid grid-cols-2 grid-rows-2">
+      <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
+        <div
+          class="video-facade r-16x9"
+          data-src="https://iframe.mediadelivery.net/embed/387112/b6c078d6-62c1-4bb1-9423-fbae648b4239?autoplay=false&loop=false&muted=true&preload=false&responsive=true"
+          data-poster="https://vz-b5e5a2d8-55e.b-cdn.net/b6c078d6-62c1-4bb1-9423-fbae648b4239/thumbnail_e418d595.jpg"
+          aria-label="Play Website Conversion Optimization video"
+          role="button" tabindex="0">
+          <div class="vf-poster" style="background-image:url('https://vz-b5e5a2d8-55e.b-cdn.net/b6c078d6-62c1-4bb1-9423-fbae648b4239/thumbnail_e418d595.jpg');"></div>
+          <div class="vf-play"></div>
+        </div>
+        <h3 style="margin:.75rem 0 .25rem; font-weight:700;">Website Conversion Optimization</h3>
+        <p class="muted" style="margin:0;">Turn traffic into booked jobs with stronger CTAs, proof, and layout.</p>
+      </article>
+
+      <!-- Search Engine Optimization Video -->
+      <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
+        <div
+          class="video-facade r-16x9"
+          data-src="https://iframe.mediadelivery.net/embed/387112/37747b24-02c9-4cef-996c-bbe7957a1219?autoplay=false&loop=false&muted=true&preload=false&responsive=true"
+          data-poster="https://vz-b5e5a2d8-55e.b-cdn.net/37747b24-02c9-4cef-996c-bbe7957a1219/thumbnail_4fb30c8f.jpg"
+          aria-label="Play Search Engine Optimization video"
+          role="button" tabindex="0">
+          <div class="vf-poster" style="background-image:url('https://vz-b5e5a2d8-55e.b-cdn.net/37747b24-02c9-4cef-996c-bbe7957a1219/thumbnail_4fb30c8f.jpg');"></div>
+          <div class="vf-play"></div>
+        </div>
+        <h3 style="margin:.75rem 0 .25rem; font-weight:700;">Search Engine Optimization (SEO)</h3>
+        <p class="muted" style="margin:0;">Show up when homeowners search for roof repair and replacement.</p>
+      </article>
+
+      <!-- Google Business Profile Video -->
+      <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
+        <div
+          class="video-facade r-16x9"
+          data-src="https://iframe.mediadelivery.net/embed/387112/4608f08e-c122-4734-9162-955131fb62b0?autoplay=false&loop=false&muted=true&preload=false&responsive=true"
+          data-poster="https://vz-b5e5a2d8-55e.b-cdn.net/4608f08e-c122-4734-9162-955131fb62b0/thumbnail_9085b536.jpg"
+          aria-label="Play Google Business Profile video"
+          role="button" tabindex="0">
+          <div class="vf-poster" style="background-image:url('https://vz-b5e5a2d8-55e.b-cdn.net/4608f08e-c122-4734-9162-955131fb62b0/thumbnail_9085b536.jpg');"></div>
+          <div class="vf-play"></div>
+        </div>
+        <h3 style="margin:.75rem 0 .25rem; font-weight:700;">Google Business Profile</h3>
+        <p class="muted" style="margin:0;">Win the map pack with a complete profile and real reviews.</p>
+      </article>
+
+      <!-- More Videos Coming Soon -->
+      <article class="card glow more-videos-card" style="padding:1rem 0 2rem 0; border:none; border-radius:5px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#fff;">
+        <h3 style="margin:.75rem 0 .25rem; font-weight:700; color:#111827;">More Videos Coming Soon</h3>
+        <p class="muted" style="margin:0;">We’re producing the next series now to cover even more ways to grow your roofing business.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  // @ts-check
+  /** @param {() => void} cb */
+  function ready(cb){
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', cb, { once:true });
+    } else { cb(); }
+  }
+  ready(function(){
+    /** @param {string} href */
+    function preconnect(href){
+      if (document.querySelector(`link[rel=preconnect][href="${href}"]`)) return;
+      const l = document.createElement('link');
+      l.rel = 'preconnect'; l.href = href; l.crossOrigin = '';
+      document.head.appendChild(l);
+    }
+    const firstFacade = document.querySelector('.video-facade');
+    if ('IntersectionObserver' in window && firstFacade) {
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach((e)=>{
+          if (e.isIntersecting) {
+            preconnect('https://iframe.mediadelivery.net');
+            preconnect('https://assets.mediadelivery.net');
+            io.disconnect();
+          }
+        });
+      }, { rootMargin: '800px 0px' });
+      io.observe(firstFacade);
+    }
+    /** @param {HTMLElement} el */
+    function activate(el){
+      if (el.dataset.loaded) return;
+      const base = el.getAttribute('data-src') || '';
+      const join = base.includes('?') ? '&' : '?';
+      const src = `${base}${join}autoplay=true`;
+      const iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.title = el.getAttribute('aria-label') || 'Video';
+      iframe.loading = 'lazy';
+      iframe.allow = 'accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'border:0; position:absolute; inset:0; width:100%; height:100%; border-radius:5px;';
+      el.classList.add('is-playing');
+      el.innerHTML = '';
+      el.appendChild(iframe);
+      el.dataset.loaded = 'true';
+    }
+    document.addEventListener('click', function(ev){
+      const t = ev.target; if(!(t instanceof Element)) return;
+      const el = t.closest('.video-facade'); if(el) activate(el);
+    }, { passive:true });
+    document.addEventListener('keydown', function(ev){
+      const t = ev.target; if(!(t instanceof Element)) return;
+      const el = t.closest('.video-facade'); if(!el) return;
+      if(ev.key==='Enter' || ev.key===' '){ ev.preventDefault(); activate(el); }
+    }, { passive:false });
+  });
+})();
+</script>

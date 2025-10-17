@@ -1,5 +1,11 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import Hero from "../components/Hero.astro";
+import SocialProof from "../components/SocialProof.astro";
+import InlineCta from "../components/InlineCta.astro";
+import VideoGrid from "../components/VideoGrid.astro";
+import DownloadBlock from "../components/DownloadBlock.astro";
+import Footer from "../components/Footer.astro";
 
 const siteName = "Rebel Ape Marketing";
 const pageTitle = "Ultimate Roofing Lead Generation Checklist";
@@ -75,289 +81,50 @@ const phone = "+1 435-246-0401";
     </script>
 
     <style>
-      body, button, input, textarea { font-family: "proxima-nova", "aktiv-grotesk", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; }
+      body, button, input, textarea {
+        font-family: "proxima-nova","aktiv-grotesk",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
+      }
+      /* Critical inline so posters show even if CSS is late */
+      .r-16x9{ position:relative; padding-top:56.25%; }
+      .video-facade{ position:relative; width:100%; height:0; padding-top:56.25%; border-radius:5px; overflow:hidden; background:#0a0a0a; }
+      .video-facade .vf-poster{ position:absolute; inset:0; background-size:cover; background-position:center; }
+      .video-facade[data-poster] .vf-poster{ background-image: var(--vf-poster); }
+      .video-facade .vf-play{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; border-radius:10px; background:rgba(255,255,255,.9); }
+      .video-facade .vf-play::before{ content:""; position:absolute; left:50%; top:50%; transform:translate(-35%,-50%); border-left:16px solid #111; border-top:10px solid transparent; border-bottom:10px solid transparent; }
+      @media (max-width: 767px){
+        .video-facade .vf-play{ width:58px; height:42px; }
+        .video-facade .vf-play::before{ border-left-width:14px; border-top-width:9px; border-bottom-width:9px; }
+      }
+      .video-facade.is-playing{ cursor:auto; }
+      .video-facade.is-playing .vf-play{ display:none; }
+      .video-facade.is-playing .vf-poster{ display:none; }
+      /* Hero bullets: 2-column grid (icon + content) to prevent weird wraps */
+      .hero-wrap .bullets{ list-style:none; padding:0; margin:.5rem 0 0; }
+      .hero-wrap .bullets li{
+        display:grid !important; grid-template-columns: 1.15rem 1fr; column-gap:.6rem; align-items:start;
+        line-height:1.6; text-align:left;
+      }
+      .hero-wrap .bullets li .check{
+        grid-column:1; align-self:start; display:inline-flex; align-items:center; justify-content:center;
+        width:1.15rem; height:1.15rem; border-radius:999px; background:#22c55e; color:#0a0a0a; font-weight:700; font-size:.85rem;
+      }
+      .hero-wrap .bullets li > *:not(.check){ grid-column:2; display:inline; white-space:normal; word-break:normal; overflow-wrap:normal; }
+      .hero-wrap .bullets li strong{ font-weight:800; margin-right:.35rem; }
     </style>
   </head>
 
   <body>
     <ViewTransitions />
 
-    <!-- HERO WRAP (shared background for logo + hero content) -->
-    <section class="hero-wrap" style="padding-block: clamp(2rem, 4vw, 3rem);">
-      <header class="container" style="display:flex; align-items:center; justify-content:center; padding-top:35px; padding-bottom:65px;">
-        <img src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png" alt="Rebel Ape Marketing" width="350" height="100" style="max-width:100%; height:auto;" loading="eager" />
-      </header>
-      <div class="container" style="max-width:950px; width:100%; text-align:center;">
-        <h1 style="font-weight:800; line-height:1.1; font-size: clamp(3rem, 7vw, 5rem); margin:0 0 55px;" class="text-white">
-          <span class="text-white">Get</span> <span style="background:linear-gradient(90deg,#22c55e,#16a34a); -webkit-background-clip:text; color:transparent;">More Jobs</span> <span class="text-white">With This</span> <span style="background:linear-gradient(90deg,#22c55e,#16a34a); -webkit-background-clip:text; color:transparent;">Marketing Roadmap</span>
-        </h1>
-      </div>
-      <div class="container grid grid-cols-2" style="align-items:center; column-gap:2.25rem; row-gap:1rem;">
-        <!-- Left column: title, subhead, bullets, CTA button + subtext -->
-        <div>
-          <h2 class="text-white" style="font-weight:700; line-height:1.1; font-size:clamp(1.8rem, 4vw, 2.8rem); margin:0 0 .75rem;">
-            The <span style="background:linear-gradient(90deg,#22c55e,#16a34a); -webkit-background-clip:text; color:transparent;">Ultimate Online Marketing</span> <span class="text-white">Checklist</span>
-          </h2>
-          <p class="text-white" style="font-weight:700; font-size:1.2rem; margin: 0 0 .5rem; line-height:1.5;">
-            This system makes your marketing work — finally bringing your ads, SEO, and website together to generate consistent leads.
-          </p>
-          <p class="text-white" style="font-weight:400; font-size:1.1rem; max-width: 60ch; margin: .35rem 0 1rem; line-height:1.5;">
-            Most roofers don’t need more traffic — they need better marketing flow.
-            This roadmap reveals the exact steps to fix what’s broken in your funnel, show up for high‑intent searches, and turn browsers into booked jobs.
-            You’ll see how to capture more leads, follow up automatically, and build the authority that keeps your pipeline full — even during the slow season.
-          </p>
+    <Hero phone={phone} />
+    <SocialProof />
+    <InlineCta />
+    <VideoGrid />
+    <DownloadBlock />
+    <Footer />
 
-          <ul class="bullets">
-            <li><span class="check">✓</span> Fix conversion leaks on your landing pages</li>
-            <li><span class="check">✓</span> Show up for “roof repair” &amp; “roof replacement” nearby</li>
-            <li><span class="check">✓</span> Get steady leads even when storms slow down</li>
-            <li><span class="check">✓</span> Turn Google searches into real conversations with optimized listings</li>
-            <li><span class="check">✓</span> Automate follow‑ups so you never lose another lead</li>
-            <li><span class="check">✓</span> Build authority that makes homeowners choose over competitors</li>
-          </ul>
-
-          <a class="btn btn-primary" href="#form" style="margin-top:.75rem; padding:1.1rem 1.5rem; font-size:1.1rem; font-weight:700; border-radius:.5rem;">YES, SEND ME THE FREE CHECKLIST</a>
-          
-        </div>
-
-        <!-- Right column: booklet image without background -->
-        <div style="display:flex; justify-content:center; align-items:center;">
-          <img src="https://RebelApeCDN.b-cdn.net/UOMC/uomc-book.webp?width=1200&format=webp" alt="Ultimate Roofing Lead Generation Checklist booklet" width="1200" height="1600" style="max-width:100%; height:auto; border-radius:.85rem; aspect-ratio: 3 / 4;" loading="eager" fetchpriority="high" decoding="async" />
-        </div>
-      </div>
-    </section>
-
-    <!-- SOCIAL PROOF SECTION -->
-    <section style="background:#fff; padding-top:3rem; padding-bottom:6rem; background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.065) 1px, transparent 1px); background-size: 12px 12px;">
-      <div class="container" style="text-align:center; max-width:900px; width:100%; margin-inline:auto;">
-        <h2 style="font-weight:800; font-size:clamp(1.8rem,4vw,2.5rem); margin-bottom:.5rem; color:#111827;">
-          Trusted By Companies Using The Silverback Authority&nbsp;Method
-        </h2>
-        <p style="font-size:clamp(1rem,2vw,1.25rem); color:#374151; margin-bottom:2rem;">
-          These businesses use this system to attract more leads, build authority, and dominate their local market.
-        </p>
-        <div class="logo-grid">
-          <img src="https://RebelApeCDN.b-cdn.net/UOMC/cti-roofing-logo.webp?width=200&format=webp" alt="CTI Roofing Logo" style="max-height:60px; width:auto;" loading="lazy" decoding="async" />
-          <img src="https://RebelApeCDN.b-cdn.net/UOMC/highland-surveying-logo.png?width=200&format=webp" alt="Highland Surveying Logo" style="max-height:60px; max-width:170px; width:auto; opacity:.85;" loading="lazy" decoding="async" />
-          <img src="https://RebelApeCDN.b-cdn.net/UOMC/ifix-appliance-repair-logo.png?width=200&format=webp" alt="iFix Appliance Repair Logo" style="max-height:60px; width:auto;" loading="lazy" decoding="async" />
-          <img src="https://RebelApeCDN.b-cdn.net/UOMC/luxcore-surfaces-logo.png?width=200&format=webp" alt="LuxCore Surfaces Logo" style="max-height:60px; max-width:170px; width:auto; opacity:.85;" loading="lazy" decoding="async" />
-          <img src="https://RebelApeCDN.b-cdn.net/UOMC/right-choice-doors-logo.png?width=200&format=webp" alt="Right Choice Doors Logo" style="max-height:60px; width:auto;" loading="lazy" decoding="async" />
-          <img src="https://RebelApeCDN.b-cdn.net/UOMC/slr-roofing-logo.png?width=200&format=webp" alt="SLR Roofing Logo" style="max-height:60px; width:auto;" loading="lazy" decoding="async" />
-        </div>
-      </div>
-    </section>
-
-    <!-- INLINE CTA BAR (moved under Social Proof) -->
-    <section style="background:#ffffffbd; padding:.9rem 0; border-top:1px solid #e5e7eb; box-shadow: 0 -5px 12px rgba(0,0,0,.05), 0 10px 24px rgba(0,0,0,.08); position:relative; z-index:2;">
-      <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
-        <div style="color:#111827; font-weight:800; font-size:clamp(1.4rem, 3.6vw, 2rem);">
-          I’m In! Give Me My Free Checklist!
-        </div>
-        <div style="padding-block:20px;">
-          <a class="btn btn-primary" href="#form" style="padding:1.05rem 1.5rem; font-size:1.1rem; font-weight:700; border-radius:.5rem;">Send Me The Checklist!</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIDEOS (video on top, copy below) -->
-    <section class="brand-section" style="padding-top: 2.5rem; padding-bottom: 50px; background: var(--brand); background-image: url('https://RebelApeCDN.b-cdn.net/UOMC/house-background.webp'), linear-gradient(180deg, var(--brand) 0%, #128a3f 100%); background-repeat: no-repeat, no-repeat; background-position: top, top; background-size: contain, 100% 100%;">
-      <div class="container" style="max-width:800px; width:100%; margin-inline:auto;">
-        <h2 class="headline" style="font-size:clamp(2rem, 4.5vw, 3rem); margin-bottom:.5rem;">
-          Google Reports 46% Of Searches Have Local Intent.
-        </h2>
-        <p style="font-size:clamp(1.1rem, 2vw, 1.5rem); font-style:italic; color:#fff; text-align:center; margin-top:0; margin-bottom:80px;">
-          This Checklist Ensures Your Business Shows Up.
-        </p>
-        <p class="source-note" style="font-size:0.8rem; color:#d1d5db; text-align:center; margin-top:-60px; margin-bottom:55px;">
-          Source: Google presentation at the <em>Secrets of Local Search</em> event (2018),<br/>
-          as reported by BrightLocal and <span style="white-space:nowrap;">Search Engine Roundtable</span>.
-        </p>
-      </div>
-      <div class="container" style="margin-bottom:0;">
-        <div class="grid grid-cols-2 grid-rows-2">
-          <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
-            <div class="ratio r-16x9">
-              <iframe
-                src="https://iframe.mediadelivery.net/embed/387112/b6c078d6-62c1-4bb1-9423-fbae648b4239?autoplay=false&loop=false&muted=true&responsive=true"
-                title="Website Conversion Optimization video"
-                loading="lazy"
-                style="border:0; position:absolute; inset:0; width:100%; height:100%; border-radius:5px;"
-                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                allowfullscreen="true">
-              </iframe>
-            </div>
-            <h3 style="margin:.75rem 0 .25rem; font-weight:700;">Website Conversion Optimization</h3>
-            <p class="muted" style="margin:0;">Turn traffic into booked jobs with stronger CTAs, proof, and layout.</p>
-          </article>
-
-          <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
-            <div class="ratio r-16x9">
-              <iframe
-                src="https://iframe.mediadelivery.net/embed/387112/37747b24-02c9-4cef-996c-bbe7957a1219?autoplay=false&loop=false&muted=true&responsive=true"
-                title="Search Engine Optimization video"
-                loading="lazy"
-                style="border:0; position:absolute; inset:0; width:100%; height:100%; border-radius:5px;"
-                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                allowfullscreen="true">
-              </iframe>
-            </div>
-            <h3 style="margin:.75rem 0 .25rem; font-weight:700;">Search Engine Optimization (SEO)</h3>
-            <p class="muted" style="margin:0;">Show up when homeowners search for roof repair and replacement.</p>
-          </article>
-
-          <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
-            <div class="ratio r-16x9">
-              <iframe
-                src="https://iframe.mediadelivery.net/embed/387112/4608f08e-c122-4734-9162-955131fb62b0?autoplay=false&loop=false&muted=true&responsive=true"
-                title="Google Business Profile video"
-                loading="lazy"
-                style="border:0; position:absolute; inset:0; width:100%; height:100%; border-radius:5px;"
-                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                allowfullscreen="true">
-              </iframe>
-            </div>
-            <h3 style="margin:.75rem 0 .25rem; font-weight:700;">Google Business Profile</h3>
-            <p class="muted" style="margin:0;">Win the map pack with a complete profile and real reviews.</p>
-          </article>
-
-          <article class="card glow more-videos-card" style="padding:1rem 0 2rem 0; border:none; border-radius:5px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#fff;">
-            <h3 style="margin:.75rem 0 .25rem; font-weight:700; color:#111827;">More Videos Coming Soon</h3>
-            <p class="muted" style="margin:0;">We’re producing the next series now to cover even more ways to grow your roofing business.</p>
-          </article>
-        </div>
-      </div>
-
-      </section>
-
-      <!-- COMBINED HEADLINE + DOWNLOAD SECTION (single dotted background) -->
-      <section style="background:#fff; padding:3.125rem 0 3rem; background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.065) 1px, transparent 1px); background-size: 12px 12px;">
-        <!-- Headline block -->
-        <div class="container" style="text-align:center;">
-          <h2 style="font-weight:800; font-size:clamp(1.8rem,4vw,2.5rem); color:#111827; margin:0 0 .5rem;">
-            It’s Time To Get Your Marketing Right
-          </h2>
-          <p style="font-size:clamp(1rem,2.2vw,1.35rem); color:#374151; margin:0;">
-            Stop Wasting Money On A Broken Marketing System
-          </p>
-        </div>
-
-        <!-- Download two-column block -->
-        <div id="form" class="container" style="margin-top: 2rem;">
-          <div class="grid grid-cols-2" style="align-items:start; column-gap:2.25rem; row-gap:1rem;">
-            <!-- Left column: Open booklet image + supporting copy -->
-            <div>
-              <div style="display:flex; justify-content:center; align-items:center; margin-bottom:1rem;">
-                <img
-                  src="https://RebelApeCDN.b-cdn.net/UOMC/uomc-open.webp?width=1400&format=webp"
-                  alt="Ultimate Roofing Lead Generation Checklist (open booklet)"
-                  width="1600" height="1000"
-                  style="max-width:100%; height:auto; border-radius:.85rem; aspect-ratio: 16 / 10;"
-                  loading="lazy" decoding="async"
-                />
-              </div>
-
-              <h3 style="color:#111827; font-weight:800; font-size:clamp(1.25rem,2.8vw,1.6rem); margin:.25rem 0 .5rem;">
-                This Guide Helps You Identify All The Gaps In Your Marketing That’s Keeping You Stuck.
-              </h3>
-
-              <p style="color:#111827; font-weight:700; margin:0 0 .75rem; line-height:1.5;">
-                By following this checklist, you’ll identify where your marketing is incomplete which is likely causing issues in your lead flow. This checklist helps you make it right.
-              </p>
-
-              <p style="color:#374151; margin:0 0 .75rem; line-height:1.6;">
-                Inside, you’ll see the exact steps to tighten your funnel, fix conversion leaks, and show up when homeowners are actively searching. Use it to align your ads, website, SEO, and follow‑up so every click has a better chance of becoming a booked estimate.
-              </p>
-
-              <ul style="list-style:none; padding:0; margin:0;">
-                <li style="display:flex; align-items:flex-start; gap:.6rem; margin:.35rem 0; color:#111827; line-height:1.6;"><span class="check" style="display:inline-flex; align-items:center; justify-content:center; width:1.15rem; height:1.15rem; border-radius:999px; background:#22c55e; color:#0a0a0a; font-weight:700; font-size:.85rem; flex:0 0 auto;">✓</span> Spot missing trust signals that quietly kill conversions</li>
-                <li style="display:flex; align-items:flex-start; gap:.6rem; margin:.35rem 0; color:#111827; line-height:1.6;"><span class="check" style="display:inline-flex; align-items:center; justify-content:center; width:1.15rem; height:1.15rem; border-radius:999px; background:#22c55e; color:#0a0a0a; font-weight:700; font-size:.85rem; flex:0 0 auto;">✓</span> Fix slow pages and layout issues that drop your form starts</li>
-                <li style="display:flex; align-items:flex-start; gap:.6rem; margin:.35rem 0; color:#111827; line-height:1.6;"><span class="check" style="display:inline-flex; align-items:center; justify-content:center; width:1.15rem; height:1.15rem; border-radius:999px; background:#22c55e; color:#0a0a0a; font-weight:700; font-size:.85rem; flex:0 0 auto;">✓</span> Map every step from click → call so no leads fall through</li>
-                <li style="display:flex; align-items:flex-start; gap:.6rem; margin:.35rem 0; color:#111827; line-height:1.6;"><span class="check" style="display:inline-flex; align-items:center; justify-content:center; width:1.15rem; height:1.15rem; border-radius:999px; background:#22c55e; color:#0a0a0a; font-weight:700; font-size:.85rem; flex:0 0 auto;">✓</span> Prioritize high‑intent keywords that book more estimates</li>
-                <li style="display:flex; align-items:flex-start; gap:.6rem; margin:.35rem 0; color:#111827; line-height:1.6;"><span class="check" style="display:inline-flex; align-items:center; justify-content:center; width:1.15rem; height:1.15rem; border-radius:999px; background:#22c55e; color:#0a0a0a; font-weight:700; font-size:.85rem; flex:0 0 auto;">✓</span> Install simple automations so you’re first to respond</li>
-                <li style="display:flex; align-items:flex-start; gap:.6rem; margin:.35rem 0; color:#111827; line-height:1.6;"><span class="check" style="display:inline-flex; align-items:center; justify-content:center; width:1.15rem; height:1.15rem; border-radius:999px; background:#22c55e; color:#0a0a0a; font-weight:700; font-size:.85rem; flex:0 0 auto;">✓</span> Track what matters (calls, estimates, jobs) so you know what’s working
-                </li>
-              </ul>
-            </div>
-
-            <!-- Right column: Headline smaller + black + simplified form in action card -->
-            <div>
-              <div style="background:#f1f5f9; border:1px solid #e5e7eb; border-radius:8px; padding:20px;">
-                <h2 style="color:#111827; text-align:center; font-weight:800; font-size:clamp(1.5rem, 3.2vw, 2.2rem); margin:0 0 .5rem;">
-                  Download Your Checklist Here
-                </h2>
-                <p style="color:#111827; text-align:center; font-size:clamp(1rem, 2vw, 1.15rem); margin:0 0 16px;">
-                  Simply fill out the form, and we’ll email it to you.
-                </p>
-
-                <div style="max-width:650px; margin:0 auto; padding:0;">
-                  <iframe
-                    src="https://link.therebelape.com/widget/form/RbWFyQ3lqf6TzO98SV1y"
-                    style="width:100%; height:610px; border:none; border-radius:12px;"
-                    id="inline-RbWFyQ3lqf6TzO98SV1y"
-                    data-layout="{'id':'INLINE'}"
-                    data-trigger-type="alwaysShow"
-                    data-activation-type="alwaysActivated"
-                    data-deactivation-type="neverDeactivate"
-                    data-form-name="Ultimate Online Marketing Checklist"
-                    data-height="607"
-                    data-layout-iframe-id="inline-RbWFyQ3lqf6TzO98SV1y"
-                    data-form-id="RbWFyQ3lqf6TzO98SV1y"
-                    title="Ultimate Online Marketing Checklist"
-                    loading="lazy"
-                  ></iframe>
-                  <script>
-                    (function(){
-                      const idle = (cb) => (window.requestIdleCallback || function(c){ setTimeout(c, 1); })(cb);
-                      idle(function(){
-                        const target = document.getElementById('inline-RbWFyQ3lqf6TzO98SV1y');
-                        if(!target) return;
-                        const load = () => {
-                          if(document.getElementById('ghl-form-embed')) return;
-                          const s = document.createElement('script');
-                          s.id = 'ghl-form-embed';
-                          s.src = 'https://link.therebelape.com/js/form_embed.js';
-                          s.defer = true;
-                          document.body.appendChild(s);
-                        };
-                        if('IntersectionObserver' in window){
-                          const io = new IntersectionObserver((entries) => {
-                            entries.forEach(e => { if(e.isIntersecting){ load(); io.disconnect(); } });
-                          }, { rootMargin: '600px 0px' });
-                          io.observe(target);
-                        } else {
-                          if(document.readyState === 'complete') load();
-                          else window.addEventListener('load', load, { passive: true });
-                        }
-                      });
-                    })();
-                  </script>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    <footer style="background:#111827; padding-block:1.75rem;">
-      <div class="container" style="color:#fff; font-size:.95rem;">
-        <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:.5rem;">
-          <div class="footer-grid" style="display:grid; grid-template-columns: auto 1fr; align-items:center; width:100%; gap:1rem;">
-            <!-- Left: Logo -->
-            <div style="display:flex; justify-content:flex-start;">
-              <img src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png" alt="Rebel Ape Marketing Logo" width="190" height="57" style="max-width:100%; height:auto;" loading="lazy" decoding="async" />
-            </div>
-
-            <!-- Right: CTA + Copyright stacked, right-aligned -->
-            <div style="display:flex; flex-direction:column; align-items:flex-end; text-align:right; gap:.35rem;">
-              <div style="display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;">
-                <strong style="color:#fff;">Call Today!</strong>
-                <a href={"tel:" + phone} style="color:#fff; text-decoration:none; font-weight:600;">{phone}</a>
-              </div>
-              <span>© 2025 | Rebel Ape Marketing | All Rights Reserved.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <script src="/scripts/video-facade.js" is:inline></script>
+    <script src="/scripts/form-lazy.js" is:inline></script>
+  
   </body>
 </html>

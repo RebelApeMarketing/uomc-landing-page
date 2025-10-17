@@ -1,0 +1,25 @@
+---
+const { phone = "+1 435-246-0401" } = Astro.props
+---
+
+<footer style="background:#111827; padding-block:1.75rem;">
+      <div class="container" style="color:#fff; font-size:.95rem;">
+        <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:.5rem;">
+          <div class="footer-grid" style="display:grid; grid-template-columns: auto 1fr; align-items:center; width:100%; gap:1rem;">
+            <!-- Left: Logo -->
+            <div style="display:flex; justify-content:flex-start;">
+              <img src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png" alt="Rebel Ape Marketing Logo" width="190" height="57" style="max-width:100%; height:auto;" loading="lazy" decoding="async" />
+            </div>
+
+            <!-- Right: CTA + Copyright stacked, right-aligned -->
+            <div style="display:flex; flex-direction:column; align-items:flex-end; text-align:right; gap:.35rem;">
+              <div style="display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;">
+                <strong style="color:#fff;">Call Today!</strong>
+                <a href={"tel:" + phone} style="color:#fff; text-decoration:none; font-weight:600;">{phone}</a>
+              </div>
+              <span>© 2025 | Rebel Ape Marketing | All Rights Reserved.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>

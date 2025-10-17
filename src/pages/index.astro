@@ -168,7 +168,7 @@ const phone = "+1 435-246-0401";
         <p style="font-size:clamp(1.1rem, 2vw, 1.5rem); font-style:italic; color:#fff; text-align:center; margin-top:0; margin-bottom:80px;">
           This Checklist Ensures Your Business Shows Up.
         </p>
-        <p style="font-size:0.8rem; color:#d1d5db; text-align:center; margin-top:-60px; margin-bottom:80px;">
+        <p class="source-note" style="font-size:0.8rem; color:#d1d5db; text-align:center; margin-top:-60px; margin-bottom:55px;">
           Source: Google presentation at the <em>Secrets of Local Search</em> event (2018),<br/>
           as reported by BrightLocal and <span style="white-space:nowrap;">Search Engine Roundtable</span>.
         </p>
@@ -178,7 +178,7 @@ const phone = "+1 435-246-0401";
           <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
             <div class="ratio r-16x9">
               <iframe
-                src="https://iframe.mediadelivery.net/embed/387112/b6c078d6-62c1-4bb1-9423-fbae648b4239?autoplay=false&loop=false&muted=true&preload=true&responsive=true"
+                src="https://iframe.mediadelivery.net/embed/387112/b6c078d6-62c1-4bb1-9423-fbae648b4239?autoplay=false&loop=false&muted=true&responsive=true"
                 title="Website Conversion Optimization video"
                 loading="lazy"
                 style="border:0; position:absolute; inset:0; width:100%; height:100%; border-radius:5px;"
@@ -193,7 +193,7 @@ const phone = "+1 435-246-0401";
           <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
             <div class="ratio r-16x9">
               <iframe
-                src="https://iframe.mediadelivery.net/embed/387112/37747b24-02c9-4cef-996c-bbe7957a1219?autoplay=false&loop=false&muted=true&preload=true&responsive=true"
+                src="https://iframe.mediadelivery.net/embed/387112/37747b24-02c9-4cef-996c-bbe7957a1219?autoplay=false&loop=false&muted=true&responsive=true"
                 title="Search Engine Optimization video"
                 loading="lazy"
                 style="border:0; position:absolute; inset:0; width:100%; height:100%; border-radius:5px;"
@@ -208,7 +208,7 @@ const phone = "+1 435-246-0401";
           <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
             <div class="ratio r-16x9">
               <iframe
-                src="https://iframe.mediadelivery.net/embed/387112/4608f08e-c122-4734-9162-955131fb62b0?autoplay=false&loop=false&muted=true&preload=true&responsive=true"
+                src="https://iframe.mediadelivery.net/embed/387112/4608f08e-c122-4734-9162-955131fb62b0?autoplay=false&loop=false&muted=true&responsive=true"
                 title="Google Business Profile video"
                 loading="lazy"
                 style="border:0; position:absolute; inset:0; width:100%; height:100%; border-radius:5px;"
@@ -307,26 +307,28 @@ const phone = "+1 435-246-0401";
                   ></iframe>
                   <script>
                     (function(){
-                      const target = document.getElementById('inline-RbWFyQ3lqf6TzO98SV1y');
-                      if(!target) return;
-                      const load = () => {
-                        if(document.getElementById('ghl-form-embed')) return;
-                        const s = document.createElement('script');
-                        s.id = 'ghl-form-embed';
-                        s.src = 'https://link.therebelape.com/js/form_embed.js';
-                        s.defer = true;
-                        document.body.appendChild(s);
-                      };
-                      if('IntersectionObserver' in window){
-                        const io = new IntersectionObserver((entries) => {
-                          entries.forEach(e => { if(e.isIntersecting){ load(); io.disconnect(); } });
-                        }, { rootMargin: '600px 0px' });
-                        io.observe(target);
-                      } else {
-                        // Fallback: load after DOM ready
-                        if(document.readyState === 'complete') load();
-                        else window.addEventListener('load', load);
-                      }
+                      const idle = (cb) => (window.requestIdleCallback || function(c){ setTimeout(c, 1); })(cb);
+                      idle(function(){
+                        const target = document.getElementById('inline-RbWFyQ3lqf6TzO98SV1y');
+                        if(!target) return;
+                        const load = () => {
+                          if(document.getElementById('ghl-form-embed')) return;
+                          const s = document.createElement('script');
+                          s.id = 'ghl-form-embed';
+                          s.src = 'https://link.therebelape.com/js/form_embed.js';
+                          s.defer = true;
+                          document.body.appendChild(s);
+                        };
+                        if('IntersectionObserver' in window){
+                          const io = new IntersectionObserver((entries) => {
+                            entries.forEach(e => { if(e.isIntersecting){ load(); io.disconnect(); } });
+                          }, { rootMargin: '600px 0px' });
+                          io.observe(target);
+                        } else {
+                          if(document.readyState === 'complete') load();
+                          else window.addEventListener('load', load, { passive: true });
+                        }
+                      });
                     })();
                   </script>
                 </div>
@@ -339,7 +341,7 @@ const phone = "+1 435-246-0401";
     <footer style="background:#111827; padding-block:1.75rem;">
       <div class="container" style="color:#fff; font-size:.95rem;">
         <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:.5rem;">
-          <div style="display:grid; grid-template-columns: auto 1fr; align-items:center; width:100%; gap:1rem;">
+          <div class="footer-grid" style="display:grid; grid-template-columns: auto 1fr; align-items:center; width:100%; gap:1rem;">
             <!-- Left: Logo -->
             <div style="display:flex; justify-content:flex-start;">
               <img src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png" alt="Rebel Ape Marketing Logo" width="190" height="57" style="max-width:100%; height:auto;" loading="lazy" decoding="async" />

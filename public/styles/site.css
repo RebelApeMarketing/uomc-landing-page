@@ -41,6 +41,7 @@
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
 body{ margin:0; color:var(--text); background:#fff; }
+html, body { overflow-x: hidden; }
 
 /* ========== 2) LAYOUT UTILITIES ========== */
 .container{ max-width:1200px; margin-inline:auto; padding-inline:1.25rem; }
@@ -172,5 +173,23 @@ p, li, .muted{ font-size:var(--body-size) !important; line-height:var(--lh-body)
     height:auto !important;
     margin-inline:auto !important;
     padding-inline:40px !important;
+  }
+}
+
+/* Prevent mobile overflow from wide logos */
+@media (max-width: 560px){
+  .logo-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1rem;      /* tighten gap so two logos + gap always fit */
+    row-gap: 1.25rem;
+  }
+  .logo-grid img{
+    display: block;
+    width: 100%;
+    height: auto;
+    /* Cap by viewport or a pixel max, whichever is smaller */
+    max-width: min(42vw, 160px) !important;
+    /* Some logos are visually “wide”—keep them centered */
+    margin-inline: auto;
   }
 }

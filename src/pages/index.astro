@@ -18,7 +18,8 @@ const phone = "+1 435-246-0401";
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
     <link rel="canonical" href="https://uomc.therebelape.com/" />
-    <link rel="stylesheet" href="/styles/site.css" />
+    <link rel="preload" href="/styles/site.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/styles/site.css"></noscript>
 
     <!-- OG / Twitter -->
     <meta property="og:title" content={pageTitle} />
@@ -34,6 +35,10 @@ const phone = "+1 435-246-0401";
     <meta name="robots" content="index,follow" />
     <link rel="preconnect" href="https://rebelapecdn.b-cdn.net" crossorigin>
     <link rel="preconnect" href="https://iframe.mediadelivery.net" crossorigin>
+    <!-- Extra performance hints -->
+    <link rel="preconnect" href="https://link.therebelape.com" crossorigin>
+    <link rel="preload" as="image" href="https://RebelApeCDN.b-cdn.net/UOMC/uomc-book.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="https://RebelApeCDN.b-cdn.net/UOMC/background-gorilla.webp">
     <meta name="theme-color" content="#16a34a">
 
 
@@ -69,9 +74,6 @@ const phone = "+1 435-246-0401";
     }
     </script>
 
-    <!-- Adobe Fonts (replace KIT_ID with your kit) -->
-    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
-    <link rel="stylesheet" href="https://use.typekit.net/KIT_ID.css">
     <style>
       body, button, input, textarea { font-family: "proxima-nova", "aktiv-grotesk", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; }
     </style>
@@ -120,7 +122,7 @@ const phone = "+1 435-246-0401";
 
         <!-- Right column: booklet image without background -->
         <div style="display:flex; justify-content:center; align-items:center;">
-          <img src="https://RebelApeCDN.b-cdn.net/UOMC/uomc-book.webp" alt="Ultimate Roofing Lead Generation Checklist booklet" style="max-width:100%; height:auto; border-radius:.85rem;" loading="lazy" />
+          <img src="https://RebelApeCDN.b-cdn.net/UOMC/uomc-book.webp" alt="Ultimate Roofing Lead Generation Checklist booklet" style="max-width:100%; height:auto; border-radius:.85rem; aspect-ratio: 3 / 4;" loading="eager" fetchpriority="high" decoding="async" />
         </div>
       </div>
     </section>
@@ -177,6 +179,7 @@ const phone = "+1 435-246-0401";
             <div class="ratio r-16x9">
               <iframe
                 src="https://iframe.mediadelivery.net/embed/387112/b6c078d6-62c1-4bb1-9423-fbae648b4239?autoplay=false&loop=false&muted=true&preload=true&responsive=true"
+                title="Website Conversion Optimization video"
                 loading="lazy"
                 style="border:0; position:absolute; inset:0; width:100%; height:100%; border-radius:5px;"
                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
@@ -191,6 +194,7 @@ const phone = "+1 435-246-0401";
             <div class="ratio r-16x9">
               <iframe
                 src="https://iframe.mediadelivery.net/embed/387112/37747b24-02c9-4cef-996c-bbe7957a1219?autoplay=false&loop=false&muted=true&preload=true&responsive=true"
+                title="Search Engine Optimization video"
                 loading="lazy"
                 style="border:0; position:absolute; inset:0; width:100%; height:100%; border-radius:5px;"
                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
@@ -205,6 +209,7 @@ const phone = "+1 435-246-0401";
             <div class="ratio r-16x9">
               <iframe
                 src="https://iframe.mediadelivery.net/embed/387112/4608f08e-c122-4734-9162-955131fb62b0?autoplay=false&loop=false&muted=true&preload=true&responsive=true"
+                title="Google Business Profile video"
                 loading="lazy"
                 style="border:0; position:absolute; inset:0; width:100%; height:100%; border-radius:5px;"
                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
@@ -224,8 +229,9 @@ const phone = "+1 435-246-0401";
 
       </section>
 
-      <!-- TRANSITION HEADLINE SECTION (white) -->
-      <section style="background:#fff; padding:3.125rem 0 1.5625rem; background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.065) 1px, transparent 1px); background-size: 12px 12px;">
+      <!-- COMBINED HEADLINE + DOWNLOAD SECTION (single dotted background) -->
+      <section style="background:#fff; padding:3.125rem 0 3rem; background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.065) 1px, transparent 1px); background-size: 12px 12px;">
+        <!-- Headline block -->
         <div class="container" style="text-align:center;">
           <h2 style="font-weight:800; font-size:clamp(1.8rem,4vw,2.5rem); color:#111827; margin:0 0 .5rem;">
             It’s Time To Get Your Marketing Right
@@ -234,11 +240,9 @@ const phone = "+1 435-246-0401";
             Stop Wasting Money On A Broken Marketing System
           </p>
         </div>
-      </section>
 
-      <!-- DOWNLOAD SECTION (white, two columns) -->
-      <section id="form" style="background:#fff; padding:2rem 0 3rem;">
-        <div class="container">
+        <!-- Download two-column block -->
+        <div id="form" class="container" style="margin-top: 2rem;">
           <div class="grid grid-cols-2" style="align-items:start; column-gap:2.25rem; row-gap:1rem;">
             <!-- Left column: Open booklet image + supporting copy -->
             <div>
@@ -246,7 +250,7 @@ const phone = "+1 435-246-0401";
                 <img
                   src="https://RebelApeCDN.b-cdn.net/UOMC/uomc-open.webp"
                   alt="Ultimate Roofing Lead Generation Checklist (open booklet)"
-                  style="max-width:100%; height:auto; border-radius:.85rem;"
+                  style="max-width:100%; height:auto; border-radius:.85rem; aspect-ratio: 16 / 10;"
                   loading="lazy"
                 />
               </div>
@@ -300,7 +304,30 @@ const phone = "+1 435-246-0401";
                     title="Ultimate Online Marketing Checklist"
                     loading="lazy"
                   ></iframe>
-                  <script src="https://link.therebelape.com/js/form_embed.js"></script>
+                  <script>
+                    (function(){
+                      const target = document.getElementById('inline-RbWFyQ3lqf6TzO98SV1y');
+                      if(!target) return;
+                      const load = () => {
+                        if(document.getElementById('ghl-form-embed')) return;
+                        const s = document.createElement('script');
+                        s.id = 'ghl-form-embed';
+                        s.src = 'https://link.therebelape.com/js/form_embed.js';
+                        s.defer = true;
+                        document.body.appendChild(s);
+                      };
+                      if('IntersectionObserver' in window){
+                        const io = new IntersectionObserver((entries) => {
+                          entries.forEach(e => { if(e.isIntersecting){ load(); io.disconnect(); } });
+                        }, { rootMargin: '600px 0px' });
+                        io.observe(target);
+                      } else {
+                        // Fallback: load after DOM ready
+                        if(document.readyState === 'complete') load();
+                        else window.addEventListener('load', load);
+                      }
+                    })();
+                  </script>
                 </div>
               </div>
             </div>

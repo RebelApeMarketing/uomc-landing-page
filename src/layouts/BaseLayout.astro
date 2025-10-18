@@ -1,0 +1,23 @@
+---
+// src/layouts/BaseLayout.astro
+import "../styles/tailwind.css";
+import "../styles/site.css";
+---
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{Astro.props.title ?? "Rebel Ape Marketing"}</title>
+    <meta name="description" content={Astro.props.description ?? ""} />
+    {Astro.props.canonical && <link rel="canonical" href={Astro.props.canonical} />}
+
+    <slot name="head" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+  
+</html>

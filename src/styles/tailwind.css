@@ -1,0 +1,19 @@
+/* v4 style import – gives your file access to all utilities */
+@import "tailwindcss";
+
+/* Your project-wide component classes */
+@layer components {
+  /* Consistent wrappers (optional, keep if you're using them) */
+  .section { @apply py-12 md:py-16; }
+  .container { @apply mx-auto max-w-[1120px] px-4; }
+
+  /* Big yellow CTA button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+           px-8 py-4 text-lg font-bold rounded-md
+           bg-yellow-400 text-gray-900
+           hover:bg-yellow-500 active:bg-yellow-600
+           transition-colors duration-200 ease-in-out
+           focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2;
+  }
+}

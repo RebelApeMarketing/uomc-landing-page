@@ -1,0 +1,28 @@
+/* ========== 1) DESIGN TOKENS & BASE ==========
+   Colors & radii live here. Adjust once, propagate everywhere. */
+
+:root {
+  /* Colors */
+  --ring: rgba(0,0,0,.06);
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --brand: #16a34a;   /* Rebel Ape green */
+  --accent: #facc15;  /* Rebel Ape yellow */
+
+  /* Radii */
+  --radius-card: 1.25rem;
+  --radius-btn: .75rem; /* squarer buttons */
+  --radius-media: .85rem;
+}
+
+* { box-sizing: border-box; }
+
+html, body { 
+  margin:0; 
+  color:var(--text); 
+  background:#fff; 
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  scroll-behavior: smooth;
+}

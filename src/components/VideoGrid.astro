@@ -1,88 +1,111 @@
-<section class="brand-section" style="padding-top: 2.5rem; padding-bottom: 50px; background: var(--brand); background-image: url('https://RebelApeCDN.b-cdn.net/UOMC/house-background.webp'), linear-gradient(180deg, var(--brand) 0%, #128a3f 100%); background-repeat: no-repeat, no-repeat; background-position: top, top; background-size: contain, 100% 100%;">
-  <div class="container" style="max-width:800px; width:100%; margin-inline:auto;">
-    <h2 class="headline" style="font-size:clamp(2rem, 4.5vw, 3rem); margin-bottom:.5rem;">
+---
+---
+
+<section class="py-12 md:py-16 bg-center bg-no-repeat bg-cover" style="background: linear-gradient(180deg, #16a34a 0%, #128a3f 100%), url('https://RebelApeCDN.b-cdn.net/UOMC/house-background.webp'); background-size: 100% auto, cover; background-position: center top, center top; background-blend-mode: overlay;">
+  
+  <!-- Header Section -->
+  <div class="mx-auto max-w-3xl px-5 text-center mb-12">
+    <h2 class="font-black text-white text-[clamp(2rem,4.5vw,3rem)] leading-tight mb-2">
       Google Reports 46% Of Searches Have Local Intent.
     </h2>
-    <p style="font-size:clamp(1.1rem, 2vw, 1.5rem); font-style:italic; color:#fff; text-align:center; margin-top:0; margin-bottom:80px;">
+    <p class="text-white italic text-[clamp(1.1rem,2vw,1.5rem)] leading-relaxed mb-4">
       This Checklist Ensures Your Business Shows Up.
     </p>
-    <p class="source-note" style="font-size:0.8rem; color:#d1d5db; text-align:center; margin-top:-60px; margin-bottom:55px;">
-      Source: Google presentation at the <em>Secrets of Local Search</em> event (2018),<br/>
-      as reported by BrightLocal and <span style="white-space:nowrap;">Search Engine Roundtable</span>.
+    <p class="text-gray-300 text-xs text-center mb-6">
+      Source: Google presentation at the Secrets of Local Search event (2018),<br/>
+      as reported by BrightLocal and Search Engine Roundtable.
     </p>
   </div>
-  <div class="container" style="margin-bottom:0;">
-    <!-- Website Optimization Video -->
-    <div class="grid grid-cols-2 grid-rows-2">
-      <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
+
+  <!-- Video Grid -->
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Website Optimization Video -->
+      <article class="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow">
         <div
-          class="video-facade r-16x9"
+          class="video-facade aspect-video relative w-full bg-black rounded-md overflow-hidden cursor-pointer group mb-4"
           data-src="https://iframe.mediadelivery.net/embed/387112/b6c078d6-62c1-4bb1-9423-fbae648b4239?autoplay=false&loop=false&muted=true&preload=false&responsive=true"
           data-poster="https://vz-b5e5a2d8-55e.b-cdn.net/b6c078d6-62c1-4bb1-9423-fbae648b4239/thumbnail_e418d595.jpg"
           aria-label="Play Website Conversion Optimization video"
-          role="button" tabindex="0">
-          <div class="vf-poster" style="background-image:url('https://vz-b5e5a2d8-55e.b-cdn.net/b6c078d6-62c1-4bb1-9423-fbae648b4239/thumbnail_e418d595.jpg');"></div>
-          <div class="vf-play"></div>
+          role="button" 
+          tabindex={0}>
+          <div class="vf-poster absolute inset-0 bg-cover bg-center group-hover:brightness-100 brightness-90 transition-all" style="background-image:url('https://vz-b5e5a2d8-55e.b-cdn.net/b6c078d6-62c1-4bb1-9423-fbae648b4239/thumbnail_e418d595.jpg');"></div>
+          <div class="vf-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-14 bg-white rounded-lg shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div class="w-0 h-0 border-l-[16px] border-l-green-600 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent rounded-sm"></div>
+          </div>
         </div>
-        <h3 style="margin:.75rem 0 .25rem; font-weight:700;">Website Conversion Optimization</h3>
-        <p class="muted" style="margin:0;">Turn traffic into booked jobs with stronger CTAs, proof, and layout.</p>
+        <h3 class="font-bold text-gray-900 text-lg mb-1">Website Conversion Optimization</h3>
+        <p class="text-gray-600 text-sm">Turn traffic into booked jobs with stronger CTAs, proof, and layout.</p>
       </article>
 
       <!-- Search Engine Optimization Video -->
-      <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
+      <article class="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow">
         <div
-          class="video-facade r-16x9"
+          class="video-facade aspect-video relative w-full bg-black rounded-md overflow-hidden cursor-pointer group mb-4"
           data-src="https://iframe.mediadelivery.net/embed/387112/37747b24-02c9-4cef-996c-bbe7957a1219?autoplay=false&loop=false&muted=true&preload=false&responsive=true"
           data-poster="https://vz-b5e5a2d8-55e.b-cdn.net/37747b24-02c9-4cef-996c-bbe7957a1219/thumbnail_4fb30c8f.jpg"
           aria-label="Play Search Engine Optimization video"
-          role="button" tabindex="0">
-          <div class="vf-poster" style="background-image:url('https://vz-b5e5a2d8-55e.b-cdn.net/37747b24-02c9-4cef-996c-bbe7957a1219/thumbnail_4fb30c8f.jpg');"></div>
-          <div class="vf-play"></div>
+          role="button" 
+          tabindex={0}>
+          <div class="vf-poster absolute inset-0 bg-cover bg-center group-hover:brightness-100 brightness-90 transition-all" style="background-image:url('https://vz-b5e5a2d8-55e.b-cdn.net/37747b24-02c9-4cef-996c-bbe7957a1219/thumbnail_4fb30c8f.jpg');"></div>
+          <div class="vf-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-14 bg-white rounded-lg shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div class="w-0 h-0 border-l-[16px] border-l-green-600 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent rounded-sm"></div>
+          </div>
         </div>
-        <h3 style="margin:.75rem 0 .25rem; font-weight:700;">Search Engine Optimization (SEO)</h3>
-        <p class="muted" style="margin:0;">Show up when homeowners search for roof repair and replacement.</p>
+        <h3 class="font-bold text-gray-900 text-lg mb-1">Search Engine Optimization (SEO)</h3>
+        <p class="text-gray-600 text-sm">Show up when homeowners search for roof repair and replacement.</p>
       </article>
 
       <!-- Google Business Profile Video -->
-      <article class="card glow" style="padding:1rem; border:none; border-radius:5px;">
+      <article class="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow">
         <div
-          class="video-facade r-16x9"
+          class="video-facade aspect-video relative w-full bg-black rounded-md overflow-hidden cursor-pointer group mb-4"
           data-src="https://iframe.mediadelivery.net/embed/387112/4608f08e-c122-4734-9162-955131fb62b0?autoplay=false&loop=false&muted=true&preload=false&responsive=true"
           data-poster="https://vz-b5e5a2d8-55e.b-cdn.net/4608f08e-c122-4734-9162-955131fb62b0/thumbnail_9085b536.jpg"
           aria-label="Play Google Business Profile video"
-          role="button" tabindex="0">
-          <div class="vf-poster" style="background-image:url('https://vz-b5e5a2d8-55e.b-cdn.net/4608f08e-c122-4734-9162-955131fb62b0/thumbnail_9085b536.jpg');"></div>
-          <div class="vf-play"></div>
+          role="button" 
+          tabindex={0}>
+          <div class="vf-poster absolute inset-0 bg-cover bg-center group-hover:brightness-100 brightness-90 transition-all" style="background-image:url('https://vz-b5e5a2d8-55e.b-cdn.net/4608f08e-c122-4734-9162-955131fb62b0/thumbnail_9085b536.jpg');"></div>
+          <div class="vf-play absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-14 bg-white rounded-lg shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div class="w-0 h-0 border-l-[16px] border-l-green-600 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent rounded-sm"></div>
+          </div>
         </div>
-        <h3 style="margin:.75rem 0 .25rem; font-weight:700;">Google Business Profile</h3>
-        <p class="muted" style="margin:0;">Win the map pack with a complete profile and real reviews.</p>
+        <h3 class="font-bold text-gray-900 text-lg mb-1">Google Business Profile</h3>
+        <p class="text-gray-600 text-sm">Win the map pack with a complete profile and real reviews.</p>
       </article>
 
       <!-- More Videos Coming Soon -->
-      <article class="card glow more-videos-card" style="padding:1rem 0 2rem 0; border:none; border-radius:5px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#fff;">
-        <h3 style="margin:.75rem 0 .25rem; font-weight:700; color:#111827;">More Videos Coming Soon</h3>
-        <p class="muted" style="margin:0;">We’re producing the next series now to cover even more ways to grow your roofing business.</p>
+      <article class="bg-white rounded-lg p-8 shadow-lg flex flex-col items-center justify-center text-center">
+        <h3 class="font-bold text-gray-900 text-lg mb-2">More Videos Coming Soon</h3>
+        <p class="text-gray-600 text-sm">We're producing the next series now to cover even more ways to grow your roofing business.</p>
       </article>
+
     </div>
   </div>
+
 </section>
+
 <script>
 (function(){
-  // @ts-check
-  /** @param {() => void} cb */
-  function ready(cb){
+  function ready(cb: () => void): void {
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', cb, { once:true });
-    } else { cb(); }
+      document.addEventListener('DOMContentLoaded', cb, { once: true });
+    } else {
+      cb();
+    }
   }
+
   ready(function(){
-    /** @param {string} href */
-    function preconnect(href){
+    function preconnect(href: string): void {
       if (document.querySelector(`link[rel=preconnect][href="${href}"]`)) return;
       const l = document.createElement('link');
-      l.rel = 'preconnect'; l.href = href; l.crossOrigin = '';
+      l.rel = 'preconnect';
+      l.href = href;
+      l.crossOrigin = '';
       document.head.appendChild(l);
     }
+
     const firstFacade = document.querySelector('.video-facade');
     if ('IntersectionObserver' in window && firstFacade) {
       const io = new IntersectionObserver((entries)=>{
@@ -96,9 +119,9 @@
       }, { rootMargin: '800px 0px' });
       io.observe(firstFacade);
     }
-    /** @param {HTMLElement} el */
-    function activate(el){
-      if (el.dataset.loaded) return;
+
+    function activate(el: Element): void {
+      if ((el as HTMLElement).dataset.loaded) return;
       const base = el.getAttribute('data-src') || '';
       const join = base.includes('?') ? '&' : '?';
       const src = `${base}${join}autoplay=true`;
@@ -112,17 +135,26 @@
       el.classList.add('is-playing');
       el.innerHTML = '';
       el.appendChild(iframe);
-      el.dataset.loaded = 'true';
+      (el as HTMLElement).dataset.loaded = 'true';
     }
-    document.addEventListener('click', function(ev){
-      const t = ev.target; if(!(t instanceof Element)) return;
-      const el = t.closest('.video-facade'); if(el) activate(el);
-    }, { passive:true });
-    document.addEventListener('keydown', function(ev){
-      const t = ev.target; if(!(t instanceof Element)) return;
-      const el = t.closest('.video-facade'); if(!el) return;
-      if(ev.key==='Enter' || ev.key===' '){ ev.preventDefault(); activate(el); }
-    }, { passive:false });
+
+    document.addEventListener('click', function(ev: MouseEvent){
+      const t = ev.target;
+      if(!(t instanceof Element)) return;
+      const el = t.closest('.video-facade');
+      if(el) activate(el);
+    }, { passive: true });
+
+    document.addEventListener('keydown', function(ev: KeyboardEvent){
+      const t = ev.target;
+      if(!(t instanceof Element)) return;
+      const el = t.closest('.video-facade');
+      if(!el) return;
+      if(ev.key==='Enter' || ev.key===' '){
+        ev.preventDefault();
+        activate(el);
+      }
+    }, { passive: false });
   });
 })();
 </script>

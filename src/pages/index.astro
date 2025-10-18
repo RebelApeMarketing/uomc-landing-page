@@ -1,5 +1,8 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 import { ViewTransitions } from "astro:transitions";
+
 import Hero from "../components/Hero.astro";
 import SocialProof from "../components/SocialProof.astro";
 import InlineCta from "../components/InlineCta.astro";
@@ -15,17 +18,14 @@ const calendly = "https://calendly.com/rebel-ape/30-minute-consultation";
 const phone = "+1 435-246-0401";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDesc} />
-    <link rel="canonical" href="https://uomc.therebelape.com/" />
-    <link rel="preload" href="/styles/site.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/styles/site.css"></noscript>
+<BaseLayout title={pageTitle} description={pageDesc} canonical="https://uomc.therebelape.com/">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://rebelapecdn.b-cdn.net" crossorigin>
+    <link rel="preconnect" href="https://iframe.mediadelivery.net" crossorigin>
+    <link rel="preconnect" href="https://link.therebelape.com" crossorigin>
+    <link rel="preload" as="image" href="https://RebelApeCDN.b-cdn.net/UOMC/uomc-book.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="https://RebelApeCDN.b-cdn.net/UOMC/background-gorilla.webp">
+    <meta name="theme-color" content="#16a34a">
 
     <!-- OG / Twitter -->
     <meta property="og:title" content={pageTitle} />
@@ -38,15 +38,6 @@ const phone = "+1 435-246-0401";
     <meta name="twitter:description" content={pageDesc} />
     <meta name="twitter:image" content="https://RebelApeCDN.b-cdn.net/UOMC/featured-image.webp" />
     <meta property="og:url" content="https://uomc.therebelape.com/" />
-    <meta name="robots" content="index,follow" />
-    <link rel="preconnect" href="https://rebelapecdn.b-cdn.net" crossorigin>
-    <link rel="preconnect" href="https://iframe.mediadelivery.net" crossorigin>
-    <!-- Extra performance hints -->
-    <link rel="preconnect" href="https://link.therebelape.com" crossorigin>
-    <link rel="preload" as="image" href="https://RebelApeCDN.b-cdn.net/UOMC/uomc-book.webp" fetchpriority="high">
-    <link rel="preload" as="image" href="https://RebelApeCDN.b-cdn.net/UOMC/background-gorilla.webp">
-    <meta name="theme-color" content="#16a34a">
-
 
     <!-- Structured data for the downloadable PDF -->
     <script type="application/ld+json">
@@ -79,52 +70,15 @@ const phone = "+1 435-246-0401";
       "url": "https://uomc.therebelape.com/"
     }
     </script>
+  </Fragment>
 
-    <style>
-      body, button, input, textarea {
-        font-family: "proxima-nova","aktiv-grotesk",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
-      }
-      /* Critical inline so posters show even if CSS is late */
-      .r-16x9{ position:relative; padding-top:56.25%; }
-      .video-facade{ position:relative; width:100%; height:0; padding-top:56.25%; border-radius:5px; overflow:hidden; background:#0a0a0a; }
-      .video-facade .vf-poster{ position:absolute; inset:0; background-size:cover; background-position:center; }
-      .video-facade[data-poster] .vf-poster{ background-image: var(--vf-poster); }
-      .video-facade .vf-play{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; border-radius:10px; background:rgba(255,255,255,.9); }
-      .video-facade .vf-play::before{ content:""; position:absolute; left:50%; top:50%; transform:translate(-35%,-50%); border-left:16px solid #111; border-top:10px solid transparent; border-bottom:10px solid transparent; }
-      @media (max-width: 767px){
-        .video-facade .vf-play{ width:58px; height:42px; }
-        .video-facade .vf-play::before{ border-left-width:14px; border-top-width:9px; border-bottom-width:9px; }
-      }
-      .video-facade.is-playing{ cursor:auto; }
-      .video-facade.is-playing .vf-play{ display:none; }
-      .video-facade.is-playing .vf-poster{ display:none; }
-      /* Hero bullets: 2-column grid (icon + content) to prevent weird wraps */
-      .hero-wrap .bullets{ list-style:none; padding:0; margin:.5rem 0 0; }
-      .hero-wrap .bullets li{
-        display:grid !important; grid-template-columns: 1.15rem 1fr; column-gap:.6rem; align-items:start;
-        line-height:1.6; text-align:left;
-      }
-      .hero-wrap .bullets li .check{
-        grid-column:1; align-self:start; display:inline-flex; align-items:center; justify-content:center;
-        width:1.15rem; height:1.15rem; border-radius:999px; background:#22c55e; color:#0a0a0a; font-weight:700; font-size:.85rem;
-      }
-      .hero-wrap .bullets li > *:not(.check){ grid-column:2; display:inline; white-space:normal; word-break:normal; overflow-wrap:normal; }
-      .hero-wrap .bullets li strong{ font-weight:800; margin-right:.35rem; }
-    </style>
-  </head>
+  <Hero phone={phone} />
+  <SocialProof />
+  <InlineCta />
+  <VideoGrid />
+  <DownloadBlock />
+  <Footer />
 
-  <body>
-    <ViewTransitions />
-
-    <Hero phone={phone} />
-    <SocialProof />
-    <InlineCta />
-    <VideoGrid />
-    <DownloadBlock />
-    <Footer />
-
-    <script src="/scripts/video-facade.js" is:inline></script>
-    <script src="/scripts/form-lazy.js" is:inline></script>
-  
-  </body>
-</html>
+  <script src="/scripts/video-facade.js" is:inline></script>
+  <script src="/scripts/form-lazy.js" is:inline></script>
+</BaseLayout>

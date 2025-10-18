@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import "../styles/tailwind.css";
 
 const siteName = "Rebel Ape Marketing";
 const pageTitle = "Thanks — Your Checklist Is On The Way!";
@@ -18,7 +19,6 @@ const phone = "+1 435-246-0401";
 
     <!-- Canonical + CSS -->
     <link rel="canonical" href="https://uomc.therebelape.com/thank-you" />
-    <link rel="stylesheet" href="/styles/site.css">
 
     <!-- OG / Twitter (simple reuse) -->
     <meta property="og:title" content={pageTitle} />
@@ -48,27 +48,58 @@ const phone = "+1 435-246-0401";
   <body>
     <ViewTransitions />
 
-    <!-- HERO wrap with same background -->
-    <section class="hero-wrap" style="padding-block: clamp(2rem, 4vw, 3rem);">
-      <header class="container" style="display:flex; align-items:center; justify-content:center; padding-top:35px; padding-bottom:65px;">
-        <a href="/" aria-label="Back to homepage">
-          <img src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png" alt="Rebel Ape Marketing" width="350" height="100" style="max-width:100%; height:auto;" loading="eager" />
+    <!-- HERO with same background as home -->
+    <section
+      class="relative bg-black bg-cover bg-center bg-no-repeat pt-[clamp(2rem,4vw,3rem)] pb-[clamp(3rem,5vw,5rem)]"
+      style="background-image: url('https://RebelApeCDN.b-cdn.net/UOMC/background-gorilla.webp')"
+    >
+      <header class="container py-8 flex justify-center mb-6 md:mb-10">
+        <a href="/" aria-label="Back to homepage" class="inline-block">
+          <img
+            src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png"
+            alt="Rebel Ape Marketing"
+            width="350"
+            height="100"
+            class="block w-[clamp(160px,60vw,340px)] h-auto"
+            loading="eager"
+          />
         </a>
       </header>
 
-      <div class="container" style="max-width:900px; text-align:center;">
-        <h1 class="text-white" style="font-weight:800; line-height:1.1; font-size:clamp(2.2rem, 6vw, 3.25rem); margin:0 0 .75rem;">
-          Thanks — Your Checklist Is On The Way!
+      <div class="container max-w-3xl text-center">
+        <div class="relative pt-[56.25%] mb-8">
+          <iframe
+            src="https://iframe.mediadelivery.net/embed/387112/576a7c6f-a221-43f4-a02e-e82d810d1d26?autoplay=true&loop=false&muted=false&preload=true&responsive=true"
+            loading="lazy"
+            class="absolute top-0 left-0 w-full h-full border-0 rounded-lg shadow-lg"
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <h1 class="text-white font-black leading-tight text-3xl md:text-4xl mb-3">
+          Thanks For Your Interest, Your Checklist Is On The Way!
         </h1>
-        <p class="text-white" style="font-size:clamp(1.05rem, 2.5vw, 1.25rem); margin:0 0 1.25rem;">
-          Check your inbox for the email from <strong>Rebel Ape Marketing</strong>. If it doesn’t arrive in a couple of minutes, check your spam or promotions tab.
+        <p class="text-white text-base md:text-lg mb-10">
+          Check your inbox for the email from <strong>Rebel Ape Marketing</strong>. If it doesn’t arrive in a couple of minutes, check your spam or promotions tab. You will receive a series of emails with tips on how to use the checklist to get more roofing leads. You can unsubscribe at any time, but we think you’ll find them helpful!
         </p>
 
-        <div style="display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="https://RebelApeCDN.b-cdn.net/UOMC/68c313527c59697fb16bade7.pdf" target="_blank" rel="noopener" aria-label="Download the checklist PDF now">
+        <div class="flex gap-3 justify-center flex-wrap">
+          <a
+            class="btn-primary"
+            href="https://RebelApeCDN.b-cdn.net/UOMC/ultimate-online-marketing-checklist-for-roofers.pdf"
+            target="_blank"
+            rel="noopener"
+            aria-label="Download the checklist PDF now"
+          >
             Download The PDF Now
           </a>
-          <a class="btn" href={calendly} target="_blank" rel="noopener" aria-label="Book a free strategy call">
+          <a
+            class="inline-flex items-center justify-center px-6 py-3 font-semibold rounded-md bg-white text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+            href={calendly}
+            target="_blank"
+            rel="noopener"
+            aria-label="Book a free strategy call"
+          >
             Book A Quick Strategy Call
           </a>
         </div>
@@ -76,36 +107,47 @@ const phone = "+1 435-246-0401";
     </section>
 
     <!-- Quick value section on white -->
-    <section style="background:#fff; padding:2.25rem 0;">
-      <div class="container" style="max-width:900px;">
-        <div class="grid grid-cols-2" style="align-items:start; column-gap:2rem;">
+    <section class="bg-white section">
+      <div class="container max-w-3xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           <div>
-            <h3 style="font-weight:800; margin:0 0 .5rem;">What To Do Next</h3>
-            <ul style="margin:.25rem 0 0 1rem; line-height:1.6;">
+            <h3 class="font-extrabold text-2xl md:text-3xl mb-2">What To Do Next</h3>
+            <ul class="list-disc pl-5 space-y-1 text-gray-700">
               <li>Open the checklist and mark what’s complete vs. missing</li>
               <li>Share it with your team so everyone’s aligned</li>
               <li>Pick 1–2 fixes this week (e.g., proof, speed, or follow-up)</li>
             </ul>
           </div>
           <div>
-            <h3 style="font-weight:800; margin:0 0 .5rem;">Need A Hand?</h3>
-            <p class="muted" style="margin:0 0 .75rem;">We’ll help you prioritize changes that move the needle fastest.</p>
-            <a class="btn btn-primary" href={calendly} target="_blank" rel="noopener">Schedule A Call</a>
+            <h3 class="font-extrabold text-2xl md:text-3xl mb-2">Need A Hand?</h3>
+            <p class="text-gray-600 mb-3">We’ll help you prioritize changes that move the needle fastest.</p>
+            <a class="btn-primary" href={calendly} target="_blank" rel="noopener">Schedule A Call</a>
           </div>
         </div>
       </div>
     </section>
 
-    <footer style="background:#111827; padding-block:1.75rem;">
-      <div class="container" style="color:#fff; font-size:.95rem;">
-        <div style="display:grid; grid-template-columns: auto 1fr; align-items:center; gap:1rem;">
-          <div><a href="/"><img src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png" alt="Rebel Ape Marketing" width="190" height="57" style="max-width:100%; height:auto;" loading="lazy" /></a></div>
-          <div style="display:flex; flex-direction:column; align-items:flex-end; text-align:right; gap:.35rem;">
-            <div style="display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;">
-              <strong style="color:#fff;">Call Today!</strong>
-              <a href={"tel:" + phone} style="color:#fff; text-decoration:none; font-weight:600;">{phone}</a>
+    <footer class="bg-gray-900 text-white py-7">
+      <div class="container">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <a href="/">
+              <img
+                src="https://RebelApeCDN.b-cdn.net/UOMC/rebel-ape-marketing-logo-white.png"
+                alt="Rebel Ape Marketing"
+                width="190"
+                height="57"
+                class="h-14 w-auto"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="w-full sm:w-auto flex flex-col items-center sm:items-end text-center sm:text-right gap-1">
+            <div class="flex items-center gap-2">
+              <strong>Call Today!</strong>
+              <a href={"tel:" + phone} class="font-semibold hover:underline">{phone}</a>
             </div>
-            <span>© 2025 | Rebel Ape Marketing | All Rights Reserved.</span>
+            <span class="text-sm/6 opacity-80">© 2025 | Rebel Ape Marketing | All Rights Reserved.</span>
           </div>
         </div>
       </div>
